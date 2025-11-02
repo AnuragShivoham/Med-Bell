@@ -1,0 +1,21 @@
+[
+  {
+    "email": "demo@medibell.com",
+    "password": "demo123",
+    "name": "Demo User",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "profile": {
+      "age": 30,
+      "gender": "Other",
+      "phone": "+1 (555) 123-4567",
+      "emergencyContact": "Emergency Contact",
+      "emergencyPhone": "+1 (555) 987-6543",
+      "address": "123 Health St, Wellness City, WC 12345",
+      "medicalHistory": "No known allergies. Regular checkups.",
+      "currentMedications": "Vitamin D, Multivitamin",
+      "bloodType": "O+",
+      "height": "170 cm",
+      "weight": "70 kg"
+    }
+  }
+]
