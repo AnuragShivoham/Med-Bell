@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<body>
+<video id="vid" src="public/videos/IntroVideo.mp4" muted></video>
+<script>
+const vid = document.getElementById('vid');
+vid.onloadedmetadata = () => console.log('Duration:', vid.duration);
+</script>
+</body>
+</html>

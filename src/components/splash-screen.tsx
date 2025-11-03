@@ -38,6 +38,27 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
     return () => clearTimeout(timer);
   }, [phase]);
 
+  // Check video duration and set a timer to skip if it doesn't end naturally
+  useEffect(() => {
+    if (phase === "video" && videoRef.current) {
+      const video = videoRef.current;
+      const checkDuration = () => {
+        if (video.duration && video.duration > 0) {
+          const durationMs = video.duration * 1000;
+          const timer = setTimeout(() => {
+            if (phase === "video") {
+              console.log("Video duration reached, moving to splash");
+              setPhase("splash");
+            }
+          }, durationMs);
+          return () => clearTimeout(timer);
+        }
+      };
+      video.addEventListener('loadedmetadata', checkDuration);
+      return () => video.removeEventListener('loadedmetadata', checkDuration);
+    }
+  }, [phase]);
+
   // After splash shows, go to main app
   useEffect(() => {
     if (phase === "splash") {
